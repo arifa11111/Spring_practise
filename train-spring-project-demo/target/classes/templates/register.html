@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="icon" href="https://clipart.world/wp-content/uploads/2020/08/normal-train-png-transparent.png">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>Register Form</title>
+</head>
+
+<center><body>
+<font><marquee direction='right' scrollamount="8" bgcolor="sky blue" ><font color="white" size="6" face="italic" >TRAIN BOOKING APP</font></marquee></font>
+<div class="container">
+    <p class="h4 mb-4">Register/Sign up</p>
+
+    <form action="#" th:action="@{/user/save}"
+          th:object="${user}" method="POST">
+
+        <!-- Add hidden form field to handle update -->
+        <input type="hidden" th:field="*{id}" />
+
+        <input type="text" th:field="*{firstName}"
+               class="form-control mb-4 col-4" placeholder="First name" required>
+
+        <input type="text" th:field="*{lastName}"
+               class="form-control mb-4 col-4" placeholder="Last name" required>
+
+        <input type="text" th:field="*{email}"
+               class="form-control mb-4 col-4" placeholder="Email" required>
+
+        <input type="tel" th:field="*{phnNo}"
+               class="form-control mb-4 col-4" placeholder="Enter phn num" required>
+
+        <input type="password" th:field="*{password}"
+               class="form-control mb-4 col-4" placeholder="create password" required>
+
+        <input type="text" th:field="*{role}"
+               class="form-control mb-4 col-4" placeholder="Enter your role" required>
+
+        <a href="/RegisterSuccess"> <button type="submit" class="btn btn-info col-2">Register</button></a>
+
+    </form>
+    <hr>
+    <a href="/">Back</a><br>
+
+</div>
+</body></center>
+
+</html>
+
+
+
+
+
+
+
+
+

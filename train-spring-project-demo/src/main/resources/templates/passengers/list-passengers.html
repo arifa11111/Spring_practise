@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="icon" href="https://clipart.world/wp-content/uploads/2020/08/normal-train-png-transparent.png">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Passengers Data</title>
+</head>
+
+<body>
+<font><marquee direction='right' scrollamount="8" bgcolor="sky blue" ><font color="white" size="6" face="italic" >TRAIN BOOKING APP</font></marquee></font>
+<div class="container">
+
+    <center> <h3>Reserved Passengers List</h3></center>
+    <hr>
+
+    <!-- Add a button >
+    <a th:href="@{/passengers/showFormForAdd}"
+       class="btn btn-primary btn-sm mb-3">
+        book train
+    </a-->
+
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Seat No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Express </th>
+            <th>From </th>
+            <th>To </th>
+            <th>Action</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="tempPassenger : ${passengers}">
+            <td th:text="${tempPassenger.id}" />
+            <td th:text="${tempPassenger.firstName}" />
+            <td th:text="${tempPassenger.lastName}" />
+            <td th:text="${tempPassenger.email}" />
+            <td th:text="${tempPassenger.express}" />
+            <td th:text="${tempPassenger.source}" />
+            <td th:text="${tempPassenger.destination}" />
+
+            <!-- Add update button/link -->
+            <td>
+                <a th:href="@{/passengers/showFormForUpdate(passengerId=${tempPassenger.id})}"
+                   class="btn btn-info btn-sm">
+                    Update
+                </a>
+                <!-- Add "delete" button/link -->
+                <a th:href="@{/passengers/delete(passengerId=${tempPassenger.id})}"
+                   class="btn btn-danger btn-sm"
+                   onclick="if (!(confirm('Are you sure you want to cancel your booking?'))) return false">
+                    Cancel booking
+                </a>
+            </td>
+
+
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+
+</body>
+</html>
+
+

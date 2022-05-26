@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link rel="icon" href="https://clipart.world/wp-content/uploads/2020/08/normal-train-png-transparent.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+          integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <title>TrainBookingApp</title>
+</head>
+
+<center><body>
+<font><marquee direction='right' scrollamount="8" bgcolor="sky blue" ><font color="white" size="6" face="italic" >TRAIN BOOKING APP</font></marquee></font>
+<hr>
+<img src="https://cdn.pixabay.com/photo/2013/07/12/18/58/toy-train-154101__340.png" width="300" height="=200">
+<br><h1>Choose your destination</h1><br><br>
+
+<a th:href="@{/book}"><input type="button" value="Login" class="btn btn-info col-2" /></a><br><br><br>
+
+<h6>Not have an acccount?..create</h6>
+
+<a th:href="@{user/registerForm}"><input type="button" value="Sign up" class="btn btn-info col-2" /></a>
+
+</body></center>
+
+</html>
